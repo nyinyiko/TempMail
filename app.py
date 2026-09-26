@@ -112,8 +112,8 @@ def init_db():
     db.commit()
 
 
-init_db()
-
+with app.app_context():
+    init_db()
 
 def validate_address(address: str) -> bool:
     if not isinstance(address, str):
